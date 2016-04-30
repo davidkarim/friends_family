@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'owners' => 'truck_owners#index'
   get 'trucks' => 'trucks#index'
   get 'signup' => 'truck_owners#new'  # Refer to section 5.4.2
+  post '/' => 'welcome#upload'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

@@ -51,4 +51,4 @@ gem 'bootstrap-sass', '~> 3.2.0'
 
 gem 'autoprefixer-rails' # adds vendor prefixes to CSS when needed
 
-require 'aws-sdk' # adds capability to inter-work with AWS for S3 bucket uploads
+gem 'aws-sdk' # adds capability to inter-work with AWS for S3 bucket uploads

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @truck_owner.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @truck_owner.email %>
+</p>
+
+<%= link_to 'Edit', edit_truck_owner_path(@truck_owner) %> |
+<%= link_to 'Back', truck_owners_path %>

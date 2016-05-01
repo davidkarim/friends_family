@@ -5,6 +5,7 @@ class TrucksController < ApplicationController
   # GET /trucks.json
   def index
     @trucks = Truck.all
+    @locations = Location.all
   end
 
   # GET /trucks/1

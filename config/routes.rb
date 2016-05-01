@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :locations
   resources :trucks
   resources :truck_owners
   # The priority is based upon order of creation: first created -> highest priority.

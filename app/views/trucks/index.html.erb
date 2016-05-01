@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%= notice %></p>
 
 <h1>Listing Trucks</h1>
 
@@ -30,4 +30,18 @@
 
 <br>
 
-<%= link_to 'New Truck', new_truck_path %>
+<%= link_to 'New Truck', new_truck_path %> -->
+
+<%= week_calendar number_of_weeks: 2 do |date| %>
+  <%= date %>
+<% end %>
+
+<%= week_calendar events: @locations do |date, locations| %>
+  <%= date %>
+
+  <% locations.each do |location| %>
+    <div>
+      <%= location.name %>
+    </div>
+  <% end %>
+<% end %>

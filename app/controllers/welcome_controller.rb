@@ -5,8 +5,7 @@ class WelcomeController < ApplicationController
 
 
     s3 = Aws::S3::Resource.new(region:'us-east-1')
-    obj = s3.bucket('food-trucks').object('key')
-    #obj = s3.bucket('food-trucks').objects.create("testing.jpg", @file.tempfile)
+    obj = s3.bucket('food-trucks').object('filename.jpg')
     obj.upload_file(@file.tempfile)
 
   end

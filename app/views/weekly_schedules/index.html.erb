@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Weekly Schedules</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Week day</th>
+      <th>Open time</th>
+      <th>Close time</th>
+      <th>Location</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @weekly_schedules.each do |weekly_schedule| %>
+      <tr>
+        <td><%= weekly_schedule.week_day %></td>
+        <td><%= weekly_schedule.open_time %></td>
+        <td><%= weekly_schedule.close_time %></td>
+        <td><%= weekly_schedule.location %></td>
+        <td><%= link_to 'Show', weekly_schedule %></td>
+        <td><%= link_to 'Edit', edit_weekly_schedule_path(weekly_schedule) %></td>
+        <td><%= link_to 'Destroy', weekly_schedule, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Weekly schedule', new_weekly_schedule_path %>

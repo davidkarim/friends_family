@@ -60,3 +60,7 @@ gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails' # adds vendor prefixes to CSS when needed
 
 gem 'aws-sdk' # adds capability to inter-work with AWS
+
+gem 'bcrypt' # Adds capability to hash password
+
+gem 'hirb'

@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20160501202209) do
+=======
+ActiveRecord::Schema.define(version: 20160501220635) do
+>>>>>>> e7259dea6c32a694ff892b08d4c5f492c89fa425
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,8 +30,9 @@ ActiveRecord::Schema.define(version: 20160501202209) do
   create_table "truck_owners", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "password_digest"
   end
 
   create_table "trucks", force: :cascade do |t|
@@ -35,8 +40,19 @@ ActiveRecord::Schema.define(version: 20160501202209) do
     t.string   "web_url"
     t.string   "phone_number"
     t.boolean  "claimed"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "truck_owner_id"
+  end
+
+  create_table "weekly_schedules", force: :cascade do |t|
+    t.string   "week_day"
+    t.string   "location"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "truck_id"
+    t.time     "open_time"
+    t.time     "close_time"
   end
 
 end

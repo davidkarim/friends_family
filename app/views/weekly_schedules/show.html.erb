@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Week day:</strong>
+  <%= @weekly_schedule.week_day %>
+</p>
+
+<p>
+  <strong>Open time:</strong>
+  <%= @weekly_schedule.open_time %>
+</p>
+
+<p>
+  <strong>Close time:</strong>
+  <%= @weekly_schedule.close_time %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @weekly_schedule.location %>
+</p>
+
+<%= link_to 'Edit', edit_weekly_schedule_path(@weekly_schedule) %> |
+<%= link_to 'Back', weekly_schedules_path %>

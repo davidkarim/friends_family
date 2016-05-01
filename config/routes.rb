@@ -1,11 +1,5 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
-  resources :locations
-=======
-  resources :weekly_schedules
->>>>>>> e7259dea6c32a694ff892b08d4c5f492c89fa425
-  resources :trucks
-  resources :truck_owners
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

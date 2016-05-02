@@ -1,44 +1,47 @@
-<!-- <p id="notice"><%= notice %></p>
+<p id="notice"><%= notice %></p>
 
-<h1>Listing Trucks</h1>
+<meta name="viewport" content="width=device-width, initial scale =1"
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Web url</th>
-      <th>Phone number</th>
-      <th>Claimed</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @trucks.each do |truck| %>
+
+
+
+
+<div class="container">
+  <h2>Hungry?</h2>
+  <p>Check out the Food Trucks available:</p>
+  <table class="table">
+    <thead>
       <tr>
-        <td><%= truck.name %></td>
-        <td><%= truck.web_url %></td>
-        <td><%= truck.phone_number %></td>
-        <td><%= truck.claimed %></td>
-        <td><%= link_to 'Show', truck %></td>
-        <td><%= link_to 'Edit', edit_truck_path(truck) %></td>
-        <td><%= link_to 'Destroy', truck, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Name</th>
+        <th>Website</th>
+        <th>Location</th>
+        <th>Phone Number</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <tr>
+        <td>John</td>
+        <td>johnstruck.com</td>
+        <td>123 NW 2nd Ave Ft.Lauderdale,FL 33333</td>
+        <td>111-111-1111</td>
+      </tr>
+      <tr>
+        <td>Mary</td>
+        <td>marystruck.com</td>
+        <td>123 NW 2nd Ave Ft.Lauderdale,FL 33333</td>
+        <td>111-111-1111</td>
+      </tr>
+      <tr>
+        <td>July</td>
+        <td>julytruck.com</td>
+        <td>123 NW 2nd Ave Ft.Lauderdale,FL 33333</td>
+        <td>111-111-1111</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-<br>
-
-<%= link_to 'New Truck', new_truck_path %> -->
-
-<%= @truck_name %>
-<%= week_calendar events: @locations do |date, locations| %>
-  <%= date %>
-
-  <% locations.each do |location| %>
-    <div>
-      <%= location.name %>
-    </div>
-  <% end %>
-<% end %>
+</body>
+</html>

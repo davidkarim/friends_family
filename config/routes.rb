@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+
   resources :locations
   resources :weekly_schedules
   resources :trucks
@@ -14,6 +16,9 @@ Rails.application.routes.draw do
   # get 'trucks' => 'trucks#index'
   get 'signup' => 'truck_owners#new'  # Refer to section 5.4.2 and 6.3.4
   post '/' => 'welcome#upload'
+  get 'login' => 'sessions#new'
+  post 'login' => 'sessions#create'
+  delete 'logout' => 'sessions#destroy'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

@@ -28,6 +28,8 @@ class TruckOwnersController < ApplicationController
 
     respond_to do |format|
       if @truck_owner.save
+        log_in @truck_owner
+        flash[:success] = "You are now logged in."
         format.html { redirect_to @truck_owner, notice: 'Truck owner was successfully created.' }
         format.json { render :show, status: :created, location: @truck_owner }
       else
@@ -69,6 +71,6 @@ class TruckOwnersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def truck_owner_params
-      params.require(:truck_owner).permit(:name, :email)
+      params.require(:truck_owner).permit(:name, :email, :password, :password_confirmation)
     end
 end

@@ -1,2 +1,12 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+h1, h2, h3 {
+  text-align: center;
+}
+
+input, textarea {
+  border: 1px solid #bbb;
+  width: 90%;
+  margin-bottom: 15px;
+}

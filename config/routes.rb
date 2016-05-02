@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :locations
+  resources :weekly_schedules
   resources :trucks
   resources :truck_owners
   # The priority is based upon order of creation: first created -> highest priority.
@@ -11,7 +12,7 @@ Rails.application.routes.draw do
   # Example of regular route:
   get 'owners' => 'truck_owners#index'
   get 'trucks' => 'trucks#index'
-  get 'signup' => 'truck_owners#new'  # Refer to section 5.4.2
+  get 'signup' => 'truck_owners#new'  # Refer to section 5.4.2 and 6.3.4
   post '/' => 'welcome#upload'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)

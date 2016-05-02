@@ -1,6 +1,6 @@
 class WelcomeController < ApplicationController
   def upload
-    @testing = "HAHAHAHAAHAHA"
+    @testing = "This is currently a Test"
     @file = params[:picture]
 
 

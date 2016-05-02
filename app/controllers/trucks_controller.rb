@@ -6,6 +6,8 @@ class TrucksController < ApplicationController
   def index
     @trucks = Truck.all
     @locations = Location.all
+    @truck_name = "Truck Name Test"
+    @truck_url = "TRUCK URL"
   end
 
   # GET /trucks/1

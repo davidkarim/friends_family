@@ -5,17 +5,29 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
+
 </head>
 <body>
-  <div class="container">
+  <!-- <div class="container">
     <% flash.each do |message_type, message| %>
     <div class="alert alert-<%=message_type %>">
       <%= message %>
     </div>
     <% end %>
-  </div>
+  </div> -->
+  <ul class="nav nav-tabs">
+    <li role="presentation"><a href="/">Home</a></li>
+    <li role="presentation"><a href="/trucks">Find</a></li>
+    <li role="presentation"><a href="/signup">Register</a></li>
+    <li role="presentation"><a href="/login">Login</a></li>
+
+  </ul>
+
 
 <%= yield %>
-<%= debug(params) if Rails.env.development? %>
+<%# debug(params) if Rails.env.development? %>
+
 </body>
 </html>

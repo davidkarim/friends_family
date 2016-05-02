@@ -7,12 +7,17 @@ div{
   font-family: "Gill Sans", sans-serif;
 
 }
-div h1{
-  font-size: 45px;
-
+h1.text-center{
+  font-style: normal;
+  font-family: 'Lato', sans-serif;;
+  font-size: 80px;
+  color: white;
+  
 }
-button {
- display: block;
- margin-left: auto;
- margin-right: auto;
+
+body{
+  background-image: url("foodtruck");
+  background-size: cover;
+  height: 100%;
+
 }

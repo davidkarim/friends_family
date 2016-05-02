@@ -28,6 +28,8 @@ class TruckOwnersController < ApplicationController
 
     respond_to do |format|
       if @truck_owner.save
+        log_in @truck_owner
+        flash[:success] = "You are now logged in."
         format.html { redirect_to @truck_owner, notice: 'Truck owner was successfully created.' }
         format.json { render :show, status: :created, location: @truck_owner }
       else

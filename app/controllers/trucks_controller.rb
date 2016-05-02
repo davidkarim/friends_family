@@ -29,6 +29,11 @@ class TrucksController < ApplicationController
   def create
     @truck = Truck.new(truck_params)
 
+    @file = params[:picture]
+    s3 = Aws::S3::Resource.new(region:'us-east-1')
+    obj = s3.bucket('food-trucks').object('filename.jpg')
+    obj.upload_file(@file.tempfile)
+
     respond_to do |format|
       if @truck.save
         format.html { redirect_to @truck, notice: 'Truck was successfully created.' }

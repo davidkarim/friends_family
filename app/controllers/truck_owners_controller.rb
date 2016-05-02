@@ -69,6 +69,6 @@ class TruckOwnersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def truck_owner_params
-      params.require(:truck_owner).permit(:name, :email)
+      params.require(:truck_owner).permit(:name, :email, :password, :password_confirmation)
     end
 end

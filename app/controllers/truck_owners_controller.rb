@@ -11,6 +11,7 @@ class TruckOwnersController < ApplicationController
   # GET /truck_owners/1.json
   def show
     @trucks = @truck_owner.trucks
+    cookies[:user_id] = params[:id]
   end
 
   # GET /truck_owners/new

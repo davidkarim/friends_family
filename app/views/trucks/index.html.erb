@@ -32,9 +32,6 @@
 
 <%= link_to 'New Truck', new_truck_path %> -->
 
-<%= week_calendar number_of_weeks: 2 do |date| %>
-  <%= date %>
-<% end %>
 <%= @truck_name %>
 <%= week_calendar events: @locations do |date, locations| %>
   <%= date %>

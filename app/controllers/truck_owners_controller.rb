@@ -10,6 +10,7 @@ class TruckOwnersController < ApplicationController
   # GET /truck_owners/1
   # GET /truck_owners/1.json
   def show
+    @trucks = @truck_owner.trucks
   end
 
   # GET /truck_owners/new

@@ -10,8 +10,8 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   # Example of regular route:
-  get 'owners' => 'truck_owners#index'
-  get 'trucks' => 'trucks#index'
+  # get 'owners' => 'truck_owners#index'
+  # get 'trucks' => 'trucks#index'
   get 'signup' => 'truck_owners#new'  # Refer to section 5.4.2 and 6.3.4
   post '/' => 'welcome#upload'
 

@@ -1,10 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Weekly Schedules</h1>
+<h1>Weekly Schedule for <%= @truck_owner.name %></h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
+      <th>Truck</th>
       <th>Week day</th>
       <th>Open time</th>
       <th>Close time</th>
@@ -14,16 +15,15 @@
   </thead>
 
   <tbody>
-    <%= @truck_owner %>
-    <% @weekly_schedules.each do |weekly_schedule| %>
+    <% @all_schedules.each do |weekly_schedule| %>
       <tr>
+        <td><%= weekly_schedule.truck.name %></td>
         <td><%= weekly_schedule.week_day %></td>
-        <td><%= weekly_schedule.open_time %></td>
-        <td><%= weekly_schedule.close_time %></td>
+        <td><%= weekly_schedule.open_time.strftime("%I:%M %p") %></td>
+        <td><%= weekly_schedule.close_time.strftime("%I:%M %p") %></td>
         <td><%= weekly_schedule.location %></td>
-        <td><%= link_to 'Show', weekly_schedule %></td>
         <td><%= link_to 'Edit', edit_weekly_schedule_path(weekly_schedule) %></td>
-        <td><%= link_to 'Destroy', weekly_schedule, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', weekly_schedule, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

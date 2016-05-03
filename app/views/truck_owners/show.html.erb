@@ -11,7 +11,9 @@
   Email: <%= @truck_owner.email %>
 </h4>
 
-
+<h4 align="center">
+  Schedule: <%= link_to "View", controller: "weekly_schedules", action: "index" %>
+</h4>
 
   <tbody>
     <% @trucks.each do |truck| %>

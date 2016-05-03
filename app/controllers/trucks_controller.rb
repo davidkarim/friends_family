@@ -5,7 +5,7 @@ class TrucksController < ApplicationController
   # GET /trucks.json
   def index
     @trucks = Truck.all
-    @locations = Location.all
+    # @locations = Location.all
     @truck_name = "Truck Name Test"
     @truck_url = "TRUCK URL"
   end

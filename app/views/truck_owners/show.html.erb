@@ -1,8 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Current Trucks Registered:</h1>
-</br>
-</br>
+
 </br>
 <h4 align="center">
   Name: <%= @truck_owner.name.capitalize %>
@@ -12,31 +11,17 @@
   Email: <%= @truck_owner.email %>
 </h4>
 
-<!--
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Web url</th>
-      <th>Phone number</th>
-      <th>Schedule</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead> -->
 
-  <!-- <tbody>
+
+  <tbody>
     <% @trucks.each do |truck| %>
-      <tr>
-        <td><%= truck.name %></td>
-        <td><%= truck.web_url %></td>
-        <td><%= truck.phone_number %></td>
+    <ul class="list-group">
+      <li class="list-group-item">Truck Name: <%= truck.name %></li>
+      <li class="list-group-item">Link: <%= truck.web_url %></li>
+      <!-- <li class="list-group-item">Phone Number<%= truck.phone_number %></li> -->
 
-        <td><%= truck.claimed %></td> -->
-        <!-- <td><%= link_to 'Show', truck %></td>
-        <td><%= link_to 'Edit', edit_truck_path(truck) %></td>
-        <td><%= link_to 'Destroy', truck, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
-      <!-- </tr>
-    <% end %> -->
+        <% end %>
+      </tbody>
 
 
 

@@ -2,3 +2,7 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
+.center_div{
+    margin: 0 auto;
+    width:38% /* value of your choice which suits your alignment */
+}

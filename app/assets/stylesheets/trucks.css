@@ -2,3 +2,21 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
+div.container{
+  font-size: 18px;
+  font-family: 'Raleway';
+  opacity: 0.9;
+
+
+
+}
+.center_div{
+    margin: 0 auto;
+    width:38% /* value of your choice which suits your alignment */
+}
+
+
+tbody td{
+  font-size: 10px;
+  font-family: 'Raleway';
+}

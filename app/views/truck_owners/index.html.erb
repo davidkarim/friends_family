@@ -4,9 +4,9 @@
 <h1>Listing Truck Owners</h1>
 
 <table>
-  <thead>
-    <tr>
-      <th>Name</th>
+  <thead align="center">
+    <tr align="center">
+      <th>&nbsp;&nbsp;&nbsp;Name&nbsp;&nbsp;&nbsp;</th>
       <th>Email</th>
       <th colspan="3"></th>
     </tr>
@@ -15,11 +15,11 @@
   <tbody>
     <% @truck_owners.each do |truck_owner| %>
       <tr>
-        <td><%= truck_owner.name %></td>
-        <td><%= truck_owner.email %></td>
-       <td><%= link_to 'Show', truck_owner %></td>
+      <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= truck_owner.name %></td>
+      <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= truck_owner.email %></td>
+       <!-- <td><%= link_to 'Show', truck_owner %></td>
         <td><%= link_to 'Edit', edit_truck_owner_path(truck_owner) %></td>
-        <td><%= link_to 'Destroy', truck_owner, method: :delete, data: { confirm: 'Are you sure?' } %></td> 
+        <td><%= link_to 'Destroy', truck_owner, method: :delete, data: { confirm: 'Are you sure?' } %></td>  -->
       </tr>
     <% end %>
   </tbody>
@@ -27,4 +27,4 @@
 
 <br>
 
-<%= link_to 'New Truck owner', new_truck_owner_path %>
+&nbsp;&nbsp;&nbsp;<%= link_to 'New Truck owner', new_truck_owner_path %>

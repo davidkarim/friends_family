@@ -1,4 +1,4 @@
-<%= form_for(@weekly_schedule) do |f| %>
+<%= form_for @weekly_schedule, :html => {:class => 'container center_div'} do |f| %>
   <% if @weekly_schedule.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@weekly_schedule.errors.count, "error") %> prohibited this weekly_schedule from being saved:</h2>

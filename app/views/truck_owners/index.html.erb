@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+
 <h1>Listing Truck Owners</h1>
 
 <table>
@@ -16,9 +17,9 @@
       <tr>
         <td><%= truck_owner.name %></td>
         <td><%= truck_owner.email %></td>
-        <td><%= link_to 'Show', truck_owner %></td>
+       <td><%= link_to 'Show', truck_owner %></td>
         <td><%= link_to 'Edit', edit_truck_owner_path(truck_owner) %></td>
-        <td><%= link_to 'Destroy', truck_owner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', truck_owner, method: :delete, data: { confirm: 'Are you sure?' } %></td> 
       </tr>
     <% end %>
   </tbody>

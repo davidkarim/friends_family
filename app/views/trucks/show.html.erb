@@ -1,20 +1,23 @@
+<div class ="container center_div">
+
 <p id="notice"><%= notice %></p>
 
-<p>
+<p align="center">
   <strong>Name:</strong>
   <%= @truck.name %>
 </p>
 
-<%= image_tag(@truck.image_url, width: '320') %>
-<p>
+<%= image_tag(@truck.image_url, width: '320') %></br></br>
+<p align="center">
   <strong>Web url:</strong>
   <%= @truck.web_url %>
 </p>
 
-<p>
+<p align="center">
   <strong>Phone number:</strong>
   <%= @truck.phone_number %>
 </p>
-
+</div>
+<p align="center">
 <%= link_to 'Edit', edit_truck_path(@truck) %> |
-<%= link_to 'Back', trucks_path %>
+<%= link_to 'Back', trucks_path %></p>

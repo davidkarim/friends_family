@@ -22,6 +22,7 @@ class TrucksController < ApplicationController
 
   # GET /trucks/1/edit
   def edit
+
   end
 
   # POST /trucks

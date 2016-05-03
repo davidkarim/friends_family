@@ -24,11 +24,9 @@
       <% @trucks.each do |truck| %>
       <tr>
         <td><%= truck.name %></td>
-        <td><%= truck.web_url %></td>
+        <td><%= link_to truck.web_url, "http://"+truck.web_url %></td>
         <td>
-          <% truck.weekly_schedules.each do |ws| %>
-            <%= ws.location %>
-          <% end %>
+          <%= truck.weekly_schedules[0].location %>
         </td>
         <td><%= truck.phone_number %></td>
       </tr>

@@ -30,7 +30,7 @@
     <li role="presentation"><a href="/trucks">Find</a></li>
     <li role="presentation"><a href="/signup">Register</a></li>
     <% if cookies[:user_id] %>
-      <li role="presentation"><a href="/login?action=logout">Logout</a></li>
+      <li role="presentation"><%= link_to "Logout", logout_url %></li>
     <% else %>
       <li role="presentation"><a href="/login">Login</a></li>
     <% end %>

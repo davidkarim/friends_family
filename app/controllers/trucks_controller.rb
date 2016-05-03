@@ -5,7 +5,7 @@ class TrucksController < ApplicationController
   # GET /trucks.json
   def index
     @trucks = Truck.all
-    @locations = Location.all
+    # @locations = Location.all
     @truck_name = "Truck Name Test"
     @truck_url = "TRUCK URL"
   end
@@ -28,6 +28,11 @@ class TrucksController < ApplicationController
   # POST /trucks.json
   def create
     @truck = Truck.new(truck_params)
+
+    @file = params[:picture]
+    s3 = Aws::S3::Resource.new(region:'us-east-1')
+    obj = s3.bucket('food-trucks').object('filename.jpg')
+    obj.upload_file(@file.tempfile)
 
     respond_to do |format|
       if @truck.save

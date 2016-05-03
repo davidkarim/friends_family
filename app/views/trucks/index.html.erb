@@ -21,24 +21,14 @@
       </tr>
     </thead>
     <tbody>
+      <% @trucks.each do |truck| %>
       <tr>
-        <td>John</td>
-        <td>johnstruck.com</td>
+        <td><%= truck.name %></td>
+        <td><%= truck.web_url %></td>
         <td>123 NW 2nd Ave Ft.Lauderdale,FL 33333</td>
         <td>111-111-1111</td>
       </tr>
-      <tr>
-        <td>Mary</td>
-        <td>marystruck.com</td>
-        <td>123 NW 2nd Ave Ft.Lauderdale,FL 33333</td>
-        <td>111-111-1111</td>
-      </tr>
-      <tr>
-        <td>July</td>
-        <td>julytruck.com</td>
-        <td>123 NW 2nd Ave Ft.Lauderdale,FL 33333</td>
-        <td>111-111-1111</td>
-      </tr>
+      <% end %>
     </tbody>
   </table>
 </div>

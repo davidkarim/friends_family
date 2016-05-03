@@ -4,7 +4,12 @@ class WeeklySchedulesController < ApplicationController
   # GET /weekly_schedules
   # GET /weekly_schedules.json
   def index
-    @weekly_schedules = WeeklySchedule.all
+    # @weekly_schedules = WeeklySchedule.all
+    @truck_owner = TruckOwner.find(cookies[:user_id])
+    # @weekly_schedules = @truck_owner.trucks.map do |truck|
+    #   truck.weekly_schedules
+    # end
+    @weekly_schedules = @truck_owner.trucks[0].weekly_schedules
   end
 
   # GET /weekly_schedules/1

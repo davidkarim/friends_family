@@ -6,3 +6,8 @@
     margin: 0 auto;
     width:38% /* value of your choice which suits your alignment */
 }
+
+div.field{
+  font-family: 'Raleway';
+  font-size: 12px;
+}

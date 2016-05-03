@@ -31,7 +31,11 @@
     <li role="presentation"><a href="/">Home</a></li>
     <li role="presentation"><a href="/trucks">Find</a></li>
     <li role="presentation"><a href="/signup">Register</a></li>
-    <li role="presentation"><a href="/login">Login</a></li>
+    <% if cookies[:user_id] %>
+      <li role="presentation"><a href="/login?action=logout">Logout</a></li>
+    <% else %>
+      <li role="presentation"><a href="/login">Login</a></li>
+    <% end %>
 
   </ul>
 

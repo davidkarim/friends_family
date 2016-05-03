@@ -1,5 +1,8 @@
 class SessionsController < ApplicationController
   def new
+    if params[:action] == "logout"
+      cookies.delete :user_id
+    end
   end
 
   def create

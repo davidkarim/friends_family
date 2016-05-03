@@ -5,7 +5,7 @@
   <%= @truck.name %>
 </p>
 
-<%= image_tag("https://s3.amazonaws.com/food-trucks/truck1.jpg", width: '320') %>
+<%= image_tag(@truck.image_url, width: '320') %>
 <p>
   <strong>Web url:</strong>
   <%= @truck.web_url %>

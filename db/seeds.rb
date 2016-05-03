@@ -24,7 +24,8 @@ schedule = [
   ["Wednesday", "1111 Parrot Jungle Trail, Miami", 1, "09:30:00", "15:00:00"],
   ["Monday", "621 NW 53rd Street, Miami, FL", 2, "09:00:00", "13:00:00"],
   ["Tuesday", "1235 East Las Olas Blvd, Fort Lauderdale, FL", 2, "09:30:00", "13:30:00"],
-  ["Wednesday", "Location C", 3, "09:30:00", "15:00:00"]
+  ["Wednesday", "1200 East Las Olas Blvd, Fort Lauderdale, FL", 3, "11:30:00", "15:00:00"],
+  ["Friday", "1000 East Las Olas Blvd, Fort Lauderdale, FL", 4, "9:30:00", "15:00:00"]
 ]
 
 truck_owner_list.each do |name, email, password|
@@ -32,7 +33,7 @@ truck_owner_list.each do |name, email, password|
 end
 
 truck_list.each do |name, web_url, phone_number, claimed, truck_owner_id, image_url|
-  Truck.create(name: name, web_url: web_url, claimed: claimed, truck_owner_id: truck_owner_id, image_url: image_url)
+  Truck.create(name: name, web_url: web_url, phone_number: phone_number, claimed: claimed, truck_owner_id: truck_owner_id, image_url: image_url)
 end
 
 schedule.each do |week_day, location, truck_id, open_time, close_time |

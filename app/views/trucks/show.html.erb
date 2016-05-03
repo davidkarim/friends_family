@@ -5,6 +5,7 @@
   <%= @truck.name %>
 </p>
 
+<%= image_tag("https://s3.amazonaws.com/food-trucks/truck1.jpg", width: '320') %>
 <p>
   <strong>Web url:</strong>
   <%= @truck.web_url %>
@@ -13,11 +14,6 @@
 <p>
   <strong>Phone number:</strong>
   <%= @truck.phone_number %>
-</p>
-
-<p>
-  <strong>Claimed:</strong>
-  <%= @truck.claimed %>
 </p>
 
 <%= link_to 'Edit', edit_truck_path(@truck) %> |

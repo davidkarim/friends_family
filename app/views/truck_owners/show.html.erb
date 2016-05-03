@@ -1,3 +1,5 @@
+<div class ="container center_div"></div>
+
 <p id="notice"><%= notice %></p>
 
 <h1>Current Trucks Registered:</h1>
@@ -32,6 +34,7 @@
 </br>
 </br>
 </br>
-<%= link_to 'Edit', edit_truck_owner_path(@truck_owner) %> 
+<p align="center">
+<%= link_to 'Edit', edit_truck_owner_path(@truck_owner) %> |
 
- <%= link_to 'Back', truck_owners_path %>
+ <%= link_to 'Back', truck_owners_path %></p>

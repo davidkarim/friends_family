@@ -30,12 +30,14 @@ class TrucksController < ApplicationController
     #truck_params.merge!("truck_owner_id" => current_user.id) --- see below
     #binding.pry
     @truck = current_user.trucks.new(truck_params)
-    @truck.image_url = "http://www.amazon.com/buulllllshit"
-    #binding.pry
     @file = params[:truck][:picture]
+    extension = file_extension @file.original_filename
+    filename = @truck.name.downcase.gsub(' ', '-') + "-" + current_user.id.to_s + "-" + Time.now.to_s.downcase.gsub(' ', '-').slice(0..-7) + extension
+    @truck.image_url = "https://s3.amazonaws.com/food-trucks/#{filename}"
+    #binding.pry
     #binding.pry
     s3 = Aws::S3::Resource.new(region:'us-east-1')
-    obj = s3.bucket('food-trucks').object('filename.jpg')
+    obj = s3.bucket('food-trucks').object(filename)
     obj.upload_file(@file.tempfile)
 
     respond_to do |format|
@@ -46,6 +48,19 @@ class TrucksController < ApplicationController
         format.html { render :new }
         format.json { render json: @truck.errors, status: :unprocessable_entity }
       end
+    end
+  end
+
+  def file_extension(full_file_name)
+    extension = full_file_name.slice(-4..-1)
+    if extension == ".jpg" || extension == "jpeg"
+      return ".jpg"
+    elsif extension == ".gif"
+      return ".gif"
+    elsif extension == ".png"
+      return ".png"
+    else
+      return ""
     end
   end
 

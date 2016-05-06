@@ -27,9 +27,13 @@ class TrucksController < ApplicationController
   # POST /trucks
   # POST /trucks.json
   def create
-    @truck = Truck.new(truck_params)
-
-    @file = params[:picture]
+    #truck_params.merge!("truck_owner_id" => current_user.id) --- see below
+    #binding.pry
+    @truck = current_user.trucks.new(truck_params)
+    @truck.image_url = "http://www.amazon.com/buulllllshit"
+    #binding.pry
+    @file = params[:truck][:picture]
+    #binding.pry
     s3 = Aws::S3::Resource.new(region:'us-east-1')
     obj = s3.bucket('food-trucks').object('filename.jpg')
     obj.upload_file(@file.tempfile)
@@ -77,6 +81,6 @@ class TrucksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def truck_params
-      params.require(:truck).permit(:name, :web_url, :phone_number, :claimed)
+      params.require(:truck).permit(:name, :web_url, :phone_number)
     end
 end

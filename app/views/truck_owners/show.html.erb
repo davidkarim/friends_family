@@ -2,32 +2,39 @@
 
 <p id="notice"><%= notice %></p>
 
-<h1>Current Trucks Registered:</h1>
+<h1>Main Account Page</h1>
 
 </br>
 <h4 align="center">
-  Name: <%= @truck_owner.name.capitalize %>
+  Name: <%= current_user.name.capitalize %>
 </h4>
 
 
 <h4 align="center">
-  Email: <%= @truck_owner.email %>
+  Email: <%= current_user.email %>
 </h4>
 
 <h4 align="center">
   Schedule: <%= link_to "View", controller: "weekly_schedules", action: "index" %>
 </h4>
+<div class="truck_list">
+  <% @trucks.each do |truck| %>
+    <div class="truck_item">
+      <div class="truck_image">
+        <%= image_tag(truck.image_url, width: '240') %>
+      </div>
 
-  <tbody>
-    <% @trucks.each do |truck| %>
-    <ul class="list-group">
-      <li class="list-group-item">Truck Name: <%= truck.name %></li>
-      <li class="list-group-item">Link: <%= truck.web_url %></li>
-      <li class="list-group-item"><%= link_to "Edit", controller: "trucks", action: "show", id: truck %></li>
-      <!-- <li class="list-group-item">Phone Number<%= truck.phone_number %></li> -->
-
-        <% end %>
-      </tbody>
+      <div class="truck_text">
+        <p>Truck Name: <%= truck.name %></li>
+        <p>Link: <%= truck.web_url %></li>
+        <p><%= link_to "Edit", controller: "trucks", action: "show", id: truck %>
+          <%= link_to 'Delete', truck, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </p>
+      </div>
+        <!-- <li class="list-group-item">Phone Number<%= truck.phone_number %></li> -->
+    </div>
+  <% end %>
+</div>
 
 
 

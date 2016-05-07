@@ -1,5 +1,7 @@
 class TruckOwner < ActiveRecord::Base
 
+  has_many :trucks
+  
   attr_accessor :remember_token
 
   before_save { self.email = email.downcase }
@@ -10,7 +12,7 @@ class TruckOwner < ActiveRecord::Base
   validates :password, length: { minimum: 6 }
 
   has_secure_password
-  has_many :trucks
+
 
   # Returns the hash digest of the given string
   def self.digest(string)

@@ -11,3 +11,16 @@ div.field{
   font-family: 'Raleway';
   font-size: 12px;
 }
+
+.truck_item {
+  clear: both;
+  margin-left: 20%;
+}
+.truck_image {
+  float: left;
+  margin-bottom: 30px;
+}
+.truck_text {
+  margin-left: 20px;
+  display: inline-block;
+}

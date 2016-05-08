@@ -9,8 +9,4 @@ class WelcomeController < ApplicationController
     obj.upload_file(@file.tempfile)
 
   end
-  def close_session
-    cookies.delete :user_id
-    redirect_to "/"
-  end
 end

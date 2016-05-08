@@ -13,14 +13,6 @@
 <body>
   <div class ="container center_div"></div>
 
-  <!-- <div class="container">
-    <% flash.each do |message_type, message| %>
-    <div class="alert alert-<%=message_type %>">
-      <%= message %>
-    </div>
-    <% end %>
-  </div> -->
-
   <!-- <div class="socialicons">
     <i class="fa fa-instagram"></i>
     <i class="fa fa-facebook-square"></i>
@@ -31,15 +23,21 @@
     <li role="presentation"><a href="/">Home</a></li>
     <li role="presentation"><a href="/trucks">Find</a></li>
     <li role="presentation"><a href="/signup">Register</a></li>
-    <% if cookies[:user_id] %>
+    <% if logged_in? %>
       <li role="presentation"><%= link_to "Logout", logout_url %></li>
     <% else %>
       <li role="presentation"><a href="/login">Login</a></li>
     <% end %>
-
   </ul>
 
 
+    <div class="container">
+      <% flash.each do |message_type, message| %>
+      <div class="alert alert-<%=message_type %>">
+        <%= message %>
+      </div>
+      <% end %>
+    </div>
 
 
 <%= yield %>

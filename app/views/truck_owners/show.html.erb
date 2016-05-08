@@ -25,8 +25,8 @@
       </div>
 
       <div class="truck_text">
-        <p>Truck Name: <%= truck.name %></li>
-        <p>Link: <%= truck.web_url %></li>
+        <p>Truck Name: <%= truck.name %></p>
+        <p>Link: <%= truck.web_url %></p>
         <p><%= link_to "Edit", controller: "trucks", action: "show", id: truck %>
           <%= link_to 'Delete', truck, method: :delete, data: { confirm: 'Are you sure?' } %>
         </p>

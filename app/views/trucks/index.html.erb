@@ -22,14 +22,16 @@
     </thead>
     <tbody>
       <% @trucks.each do |truck| %>
-      <tr>
-        <td><%= truck.name %></td>
-        <td><%= link_to truck.web_url, "http://"+truck.web_url %></td>
-        <td>
-          <%= truck.weekly_schedules[0].location %>
-        </td>
-        <td><%= truck.phone_number %></td>
-      </tr>
+        <% if truck.weekly_schedules.count > 0 %>
+          <tr>
+            <td><%= truck.name %></td>
+            <td><%= link_to truck.web_url, "http://"+truck.web_url %></td>
+            <td>
+              <%= truck.weekly_schedules[0].location %>
+            </td>
+            <td><%= truck.phone_number %></td>
+          </tr>
+        <% end %>
       <% end %>
     </tbody>
   </table>

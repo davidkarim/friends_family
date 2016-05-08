@@ -22,11 +22,14 @@
   <ul class="nav nav-tabs">
     <li role="presentation"><a href="/">Home</a></li>
     <li role="presentation"><a href="/trucks">Find</a></li>
-    <li role="presentation"><a href="/signup">Register</a></li>
+    <% if !logged_in? %>
+      <li role="presentation"><%= link_to "Signup", signup_path %></li>
+    <% end %>
     <% if logged_in? %>
-      <li role="presentation"><%= link_to "Logout", logout_url %></li>
+      <li role="presentation"><%= link_to "Account", truck_owner_path(session[:user_id]) %></li>
+      <li role="presentation"><%= link_to "Logout", logout_path %></li>
     <% else %>
-      <li role="presentation"><a href="/login">Login</a></li>
+      <li role="presentation"><%= link_to "Login", login_path %></li>
     <% end %>
   </ul>
 
